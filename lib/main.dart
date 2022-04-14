@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/5),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/50),
               child: SizedBox(
                 child: TextFormField(
                   decoration:  const InputDecoration(
@@ -186,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),Padding(
-              padding:  EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/5),
+              padding:  EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/50),
               child: SizedBox(
                 child: TextFormField(
                   decoration:  const InputDecoration(
@@ -264,7 +264,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               )
                             },
                           )
-                          ,margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/5)
+                          ,margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/50)
                       ),
                       height: WidgetsBinding.instance!.window.physicalSize.height/4,
 
@@ -315,9 +315,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         },
                         )
-                      ,margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/5)
+                      ,margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/50)
                     ),
-                    height: WidgetsBinding.instance!.window.physicalSize.height/4,
+                    height: WidgetsBinding.instance!.window.physicalSize.height/10,
 
                   );
                 }).toList(),

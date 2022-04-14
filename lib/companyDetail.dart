@@ -126,7 +126,7 @@ class _CompanyDetail extends State<CompanyDetail> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.0,
                       horizontal: WidgetsBinding.instance!.window.physicalSize
-                          .width / 5),
+                          .width / 50),
                   child: SizedBox(
                     child: Text(widget.companyName.toString()
                         + ' details'
@@ -145,7 +145,7 @@ class _CompanyDetail extends State<CompanyDetail> {
                 ), Padding(
                   padding: EdgeInsets.symmetric(vertical: 10.0,
                       horizontal: WidgetsBinding.instance!.window.physicalSize
-                          .width / 5),
+                          .width / 50),
                   child: SizedBox(
                     child: TextFormField(
                       decoration:  const InputDecoration(
@@ -220,10 +220,10 @@ class _CompanyDetail extends State<CompanyDetail> {
                                     ),
                                     margin: EdgeInsets.symmetric(vertical: 10.0,
                                         horizontal: WidgetsBinding.instance!
-                                            .window.physicalSize.width / 5)
+                                            .window.physicalSize.width / 50)
                                 ),
                                 height: WidgetsBinding.instance!.window
-                                    .physicalSize.height / 4,
+                                    .physicalSize.height / 10,
                               );
                             }).toList(),
                             shrinkWrap: true,
