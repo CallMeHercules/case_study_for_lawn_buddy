@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 //local
 import 'dataHandler/company.dart';
@@ -46,6 +49,21 @@ class _MyHomePageState extends State<MyHomePage> {
   late Future<List<Employee>> initEmployees;
   late List<Employee> savedEmployees;
   late List<Employee> display;
+
+  late String _mySelection = 'Oyoyo';
+
+  static List data = [];
+
+  Future<String> getSWData() async {
+    final String companyString = await rootBundle.loadString('data/company_data.json');
+    var companies = json.decode(companyString) as List;
+
+    setState(() {
+      data = companies;
+    });
+
+    return "Sucess";
+  }
 
   Future<List<Employee>> _getEmployees() async {
     if (savedEmployees.isEmpty) {
@@ -157,7 +175,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     return employee;
   }
-
+  @override
+  void initState() {
+    super.initState();
+    getSWData();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -185,7 +207,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
               ),
-            ),Padding(
+            ),
+            Padding(
               padding:  EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/50),
               child: SizedBox(
                 child: TextFormField(
@@ -203,6 +226,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            // ,Padding(padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: WidgetsBinding.instance!.window.physicalSize.width/50),
+            //             child: Center(child: SizedBox(
+            //               child: DropdownButton(
+            //               hint: const Text('Search by company name'),
+            //               disabledHint: const Text('Search by company name'),
+            //               style: const TextStyle(
+            //               fontSize: 24,
+            //     ), items: data.map((item)  {
+            //     return DropdownMenuItem(
+            //       child: Text(item['company_name'],style: const TextStyle(
+            //         fontSize: 24,
+            //         color: Colors.black,
+            //       ),),
+            //       value: item['company_name'].toString(),
+            //     );
+            //   }).toList(),
+            //     onChanged: (newVal) {
+            //       setState(() {
+            //         _mySelection = newVal.toString();
+            //         companyTextController.text = _mySelection;
+            //       });
+            //       // ;
+            //     },
+            //     value: _mySelection,
+            //   ),
+            // )
+            // ),
+            // ),
           Center(
             child: FutureBuilder<List<Employee>>(
             future: _dataInit(),

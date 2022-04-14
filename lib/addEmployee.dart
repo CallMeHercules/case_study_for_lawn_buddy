@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'dataHandler/companyConstructor.dart';
 import 'dataHandler/employee.dart';
 
 
@@ -45,12 +44,6 @@ class AddEmployee extends StatefulWidget {
       return "Sucess";
     }
 
-    Future<List<Employee>> _getCompaniesInit() async {
-      setState(() {
-        var companies = CompanyConstructor.instance.readJson();
-      });
-      return companies;
-    }
     @override
     void initState() {
       super.initState();
